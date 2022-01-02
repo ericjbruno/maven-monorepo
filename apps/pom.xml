@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ericbruno</groupId>
+        <artifactId>root</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <groupId>com.ericbruno.apps</groupId>
+    <artifactId>apps</artifactId>
+    <packaging>pom</packaging>
+
+    <profiles>
+        <profile>
+            <id>App1</id>
+            <activation>
+                <file>
+                    <exists>App1/pom.xml</exists>
+                </file>
+            </activation>
+            <modules>
+                <module>App1</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>App2</id>
+            <activation>
+                <file>
+                    <exists>App2/pom.xml</exists>
+                </file>
+            </activation>
+            <modules>
+                <module>App2</module>
+            </modules>
+        </profile>
+    </profiles>
+</project>
